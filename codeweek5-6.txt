@@ -1,0 +1,639 @@
+codes of week 5-6 
+
+addition of two numbers
+
+
+namespace Week5_6_activity
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(txtFirst.Text, out int firstNumber) &&
+       int.TryParse(txtSecond.Text, out int secondNumber))
+            {
+                int sum = firstNumber + secondNumber;
+
+                lblResult.Text = "Sum: " + sum;
+            }
+            else
+            {
+                MessageBox.Show("Please enter valid numbers.");
+            }
+        }
+    }
+}
+
+
+guess the animal
+
+
+
+namespace guestheanimal
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void btnO1_Click(object sender, EventArgs e)
+        {
+            string animal = "Panda";
+
+            MessageBox.Show(
+                "The answer is " + animal + "!",
+                "Correct Answer"
+            );
+        }
+    }
+}
+
+
+
+Gues the Color
+
+namespace guessthecolor
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void lblColor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnO1_Click(object sender, EventArgs e)
+        {
+            string color = "Blue";
+
+            MessageBox.Show(
+                "The color is " + color + "!",
+                "Correct Answer"
+            );
+        }
+    }
+}
+
+
+Print Every number
+
+
+
+namespace PRINT_EVERY_NUMBER
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int[] numbers = { 10, 20, 30, 40, 50 };
+
+            string result = "";
+
+            foreach (int number in numbers)
+            {
+                result += number + "\n";
+            }
+
+            MessageBox.Show(result, "Print Every Number");
+        }
+    }
+}
+
+
+Find the name
+
+namespace FindAName
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOn_Click(object sender, EventArgs e)
+        {
+            string[] names = { "Ana", "Ben", "Dantes", "Diana" };
+            string target = "Dantes";
+            bool found = false;
+
+            foreach (string name in names)
+            {
+                if (name == target)
+                {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (found)
+            {
+                MessageBox.Show("Dantes was found!", "Find a Name");
+            }
+            else
+            {
+                MessageBox.Show("Name not found.", "Find a Name");
+            }
+        }
+    }
+}
+
+calculate total
+
+namespace CALCULATE_TOTAL
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void btnOn_Click(object sender, EventArgs e)
+        {
+            int[] numbers = { 10, 20, 30, 40, 50 };
+            int total = 0;
+
+            foreach (int number in numbers)
+            {
+                total += number;
+            }
+
+            MessageBox.Show(
+                "The total is " + total,
+                "Calculate Total"
+            );
+        }
+    }
+}
+
+
+Binary Search
+
+namespace Binary_search
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOlogn_Click(object sender, EventArgs e)
+        {
+            int[] numbers = { 10, 20, 30, 40, 50, 60, 70 };
+            int target = 50;
+            int left = 0;
+            int right = numbers.Length - 1;
+            bool found = false;
+
+            while (left <= right)
+            {
+                int middle = (left + right) / 2;
+
+                if (numbers[middle] == target)
+                {
+                    found = true;
+                    break;
+                }
+                else if (numbers[middle] < target)
+                {
+                    left = middle + 1;
+                }
+                else
+                {
+                    right = middle - 1;
+                }
+            }
+
+            if (found)
+            {
+                MessageBox.Show(
+                    target + " was found!",
+                    "Binary Search"
+                );
+            }
+            else
+            {
+                MessageBox.Show(
+                    "Number not found.",
+                    "Binary Search"
+                );
+            }
+        }
+
+
+
+    }
+}
+
+
+Divide number
+
+
+namespace Divideby2
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSubtitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDivide_Click(object sender, EventArgs e)
+        {
+            int number = 100;
+            string result = "";
+
+            while (number > 1)
+            {
+                result += number + " → ";
+                number = number / 2;
+            }
+
+            result += number;
+
+            MessageBox.Show(
+                result,
+                "Divide by 2 - O(log n)"
+            );
+        }
+    }
+}
+
+Guess the Algorithm
+
+namespace _9
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSubtitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGuess_Click(object sender, EventArgs e)
+        {
+            int low = 1;
+            int high = 100;
+            int guess = 50;
+
+            string message = "Guessing a number from 1 to 100:\n\n";
+
+            while (low <= high)
+            {
+                guess = (low + high) / 2;
+
+                message += "My guess is " + guess + "\n";
+
+                if (guess == 50)
+                {
+                    break;
+                }
+
+                high = guess - 1;
+            }
+
+            MessageBox.Show(
+                message + "\nThe number is 50!",
+                "Guessing Algorithm"
+            );
+        }
+    }
+}
+
+
+nested loop
+
+
+namespace _10
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOn2_Click(object sender, EventArgs e)
+        {
+            string result = "";
+
+            for (int i = 1; i <= 3; i++)
+            {
+                for (int j = 1; j <= 3; j++)
+                {
+                    result += j + "  ";
+                }
+
+                result += "\n";
+            }
+
+            MessageBox.Show(result, "Nested Loops - O(n²)");
+        }
+    }
+}
+
+
+compare student
+
+namespace _11
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string[] students = { "Miguel", "Sofia", "Lucas", "Mia" };
+            int[] scores = { 90, 85, 90, 95 };
+
+            string result = "Student Score Comparison\n\n";
+
+            for (int i = 0; i < students.Length; i++)
+            {
+                for (int j = i + 1; j < students.Length; j++)
+                {
+                    if (scores[i] == scores[j])
+                    {
+                        result += students[i] + " and "
+                               + students[j] + " have the same score: "
+                               + scores[i] + "\n";
+                    }
+                }
+            }
+
+            MessageBox.Show(result, "Compare Students - O(n²)");
+        }
+    }
+}
+
+
+
+
+multiplication
+
+namespace _12
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOn2_Click(object sender, EventArgs e)
+        {
+            string result = "MULTIPLICATION TABLE\n\n";
+
+            for (int row = 1; row <= 5; row++)
+            {
+                for (int col = 1; col <= 5; col++)
+                {
+                    result += (row * col).ToString().PadLeft(4);
+                }
+
+                result += "\n";
+            }
+
+            MessageBox.Show(result, "Multiplication Table - O(n²)");
+        }
+    }
+}
+
+
+Clothes
+
+namespace _13
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnO2n_Click(object sender, EventArgs e)
+        {
+            string[] shirts = { "Red Shirt", "Blue Shirt" };
+            string[] pants = { "Black Pants", "White Pants" };
+
+            string result = "OUTFIT COMBINATIONS\n\n";
+            int count = 0;
+
+            foreach (string shirt in shirts)
+            {
+                foreach (string pant in pants)
+                {
+                    count++;
+                    result += count + ". " + shirt
+                            + " + " + pant + "\n";
+                }
+            }
+
+            result += "\nTotal outfits: " + count;
+
+            MessageBox.Show(result, "Outfit Combinations");
+        }
+    }
+}
+
+
+ribbon
+
+namespace _14
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void lblBigO_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnO2n_Click(object sender, EventArgs e)
+        {
+            string[] colors = { "Red", "Blue" };
+            string result = "GIFT BOX COMBINATIONS\n\n";
+            int count = 0;
+
+            for (int a = 0; a < 2; a++)
+            {
+                for (int b = 0; b < 2; b++)
+                {
+                    for (int c = 0; c < 2; c++)
+                    {
+                        count++;
+
+                        result += count + ". "
+                            + colors[a] + " - "
+                            + colors[b] + " - "
+                            + colors[c] + "\n";
+                    }
+                }
+            }
+
+            result += "\nTotal combinations: " + count;
+
+            MessageBox.Show(result, "Gift Box Combinations");
+        }
+    }
+}
+
+pizza
+
+namespace _15
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnO2n_Click(object sender, EventArgs e)
+        {
+            string[] toppings = { "Cheese", "Mushroom", "Pepperoni" };
+            string result = "PIZZA TOPPING COMBINATIONS\n\n";
+
+            int total = 1 << toppings.Length;
+
+            for (int i = 0; i < total; i++)
+            {
+                string pizza = "";
+
+                for (int j = 0; j < toppings.Length; j++)
+                {
+                    if ((i & (1 << j)) != 0)
+                    {
+                        pizza += toppings[j] + ", ";
+                    }
+                }
+
+                if (pizza == "")
+                {
+                    pizza = "Plain Pizza";
+                }
+                else
+                {
+                    pizza = pizza.TrimEnd(',', ' ');
+                }
+
+                result += (i + 1) + ". " + pizza + "\n";
+            }
+
+            result += "\nTotal combinations: " + total;
+
+            MessageBox.Show(result, "Pizza Combinations");
+        }
+    }
+}
+
